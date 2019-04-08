@@ -26,6 +26,12 @@ public class ActivityMainActivity extends Activity  {
             }
         });
         tv2 = (TextView) findViewById(R.id.tv2);
+        tv2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(ActivityMainActivity.this, "看我", Toast.LENGTH_SHORT).show();
+            }
+        });
         tv3 = (TextView) findViewById(R.id.tv3);
         tv4 = (TextView) findViewById(R.id.tv4);
     }
