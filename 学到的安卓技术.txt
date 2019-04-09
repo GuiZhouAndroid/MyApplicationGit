@@ -1,0 +1,16 @@
+1.友盟多渠道打包+KeyStore默认打包release(在设备上使用到某些第三方库的服务时,能识别该项目的sha1或包名或MD5成功后接入使用第三方服务，避免开发时遇见矛盾问题)
+2.ButterKnife和Google新推出的AndroidX库：
+com.android.support 系列的依赖报名已经不陌生了，为了兼容而出现的他们在更新到28时候谷歌官方宣布停止更新，原因就是版本管理乱，开发中也经常会碰到各种compat 而且原来越多，
+所以谷歌开始规范支持包，androidX 孕育而生。
+
+androidx 出现规范代码，但是产生一个过渡期，什么过渡期？ support到androidx过渡，对于我们来说又是一顿查找替换。
+为什么查找替换，因为原来api类名不变的情况下，androidx报名全部发生变化。这导致同一个项目中androidx 和 support会产生冲突，常见错误：项目中同时使用了androidx 和 support 。
+	出现提示如下：
+	Manifest merger failed : Attribute application@appComponentFactory value=(androidx.core.app.CoreComponentFactory) from [androidx.core:core:1.0.0-beta01] 
+	AndroidManifest.xml:22:18-86
+    is also present at [com.android.support:support-compat:28.0.0-alpha3] AndroidManifest.xml:22:18-91 
+	value=(android.support.v4.app.CoreComponentFactory).
+    Suggestion: add 'tools:replace="android:appComponentFactory"' to <application> 
+	element at AndroidManifest.xml:11:5-49:19 to override.
+
+
